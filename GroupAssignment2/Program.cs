@@ -21,7 +21,6 @@ namespace GroupAssignment2
             Console.WriteLine(myDeck);
 
             //For the Challange
-            /*
             Console.WriteLine($"\nRemove three card from the top:");
             Console.WriteLine(myDeck.GetTopCard());
             Console.WriteLine(myDeck.GetTopCard());
@@ -29,7 +28,6 @@ namespace GroupAssignment2
 
             Console.WriteLine($"\nDeck has now {myDeck.Count} cards:");
             Console.WriteLine(myDeck);
-            */
         }
     }
 }

@@ -23,7 +23,22 @@ namespace GroupAssignment2
         /// <summary>
         /// Number of Cards in the deck
         /// </summary>
-        public int Count => cards.Length;
+        /// 
+        public int Count
+        {
+            get
+            {
+                int count = 0;
+                for (int i = 0; i < cards.Length; i++)
+                {
+                    if (cards[i] != null)
+                    {
+                        count++;
+                    }
+                }
+                return count;
+            }
+        }
 
         /// <summary>
         /// Overriden and used by for example Console.WriteLine()
@@ -32,9 +47,12 @@ namespace GroupAssignment2
         public override string ToString()
         {
             string sRet = "";
-            for (int i = 0; i < Count; i++)
+            for (int i = 0; i < cards.Length; i++)
             {
-                sRet += cards[i].ToString() + "\n";
+                if(cards[i] != null)
+                {
+                    sRet += cards[i].ToString() + "\n";
+                }
             }
             return sRet;
         }
@@ -78,16 +96,21 @@ namespace GroupAssignment2
         /// <returns>The card removed from the deck</returns>
         public PlayingCard GetTopCard()
         {
-            //YOUR CODE
-            //to return the Top card of the deck and reduce the nr of cards in the deck
-            return null;
+            for (int i = 0; i < cards.Length; i++)
+            {
+                if(cards[i] != null)
+                {
+                    PlayingCard topCard1 = new PlayingCard(cards[i].Color, cards[i].Value);
+                    Array.Clear(cards, i, 1);
+                    return topCard1;
+                }
+            }
+             PlayingCard topCard2 = null;
+            return topCard2;
         }
 
         public DeckOfCards ()
         {
-            //YOUR CODE
-            //to write a constructor that generates a fresh deck of cards
-
             for(int i = 0; i < 52; i++)
             {
                 PlayingCardColor color;
