@@ -106,7 +106,7 @@ namespace GroupAssignment2
                 }
             }
              PlayingCard topCard2 = null;
-            return topCard2;
+             return topCard2;
         }
 
         public DeckOfCards ()
@@ -125,7 +125,6 @@ namespace GroupAssignment2
                 {
                     color = PlayingCardColor.Diamonds;
                     value = (PlayingCardValue)(i - 11);
-
                 }
                 else if (i >= 26 && i < 39)
                 {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Maria Kilsved, Ghasem Soltani och Jenny Dyews
+
+using System;
 
 namespace GroupAssignment2
 {
