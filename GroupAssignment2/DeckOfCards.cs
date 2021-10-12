@@ -82,12 +82,35 @@ namespace GroupAssignment2
         /// </summary>
         public void FreshDeck()
         {
-            int cardNr = 0;
+            for (int i = 0; i < 52; i++)
+            {
+                PlayingCardColor color;
+                PlayingCardValue value;
 
+                if (i < 13)
+                {
+                    color = PlayingCardColor.Clubs;
+                    value = (PlayingCardValue)(i + 2);
+                }
+                else if (i >= 13 && i < 26)
+                {
+                    color = PlayingCardColor.Diamonds;
+                    value = (PlayingCardValue)(i - 11);
+                }
+                else if (i >= 26 && i < 39)
+                {
+                    color = PlayingCardColor.Hearts;
+                    value = (PlayingCardValue)(i - 24);
+                }
+                else
+                {
+                    color = PlayingCardColor.Spades;
+                    value = (PlayingCardValue)(i - 37);
+                }
 
-
-            //YOUR CODE
-            //to initialize a fresh deck of cards
+                PlayingCard card = new PlayingCard(color, value);
+                cards[i] = card;
+            }
         }
 
         /// <summary>
@@ -111,37 +134,7 @@ namespace GroupAssignment2
 
         public DeckOfCards ()
         {
-            for(int i = 0; i < 52; i++)
-            {
-                PlayingCardColor color;
-                PlayingCardValue value;
-
-                if(i < 13)
-                {
-                    color = PlayingCardColor.Clubs;
-                    value = (PlayingCardValue)(i + 2);
-                }
-                else if(i >= 13 && i < 26)
-                {
-                    color = PlayingCardColor.Diamonds;
-                    value = (PlayingCardValue)(i - 11);
-                }
-                else if (i >= 26 && i < 39)
-                {
-                    color = PlayingCardColor.Hearts;
-                    value = (PlayingCardValue)(i - 24);
-                }
-                else
-                {
-                    color = PlayingCardColor.Spades;
-                    value = (PlayingCardValue)(i - 37);
-                }
-
-                PlayingCard card = new PlayingCard(color, value);
-                cards[i] = card;
-            }
-
-            
+            FreshDeck();
         }
     }
 }
